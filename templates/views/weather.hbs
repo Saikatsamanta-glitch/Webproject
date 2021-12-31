@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {{>header}}
+</head>
+<body>
+    {{>navbar}}
+
+ <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div  class="main_content">
+                    <form action="" class="temp_form">
+                        <input type="text" id="cityName"  placeholder="Enter your City Name" autocomplete="off">
+                        <input type="submit"  value="search" id="submit">
+                    </form>
+                </div>
+                <div class="tempInformation">
+                    <div class="top_layer">
+                        <p id="day">Tuesday</p>
+                        <p id="taday_date"></p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name">Get O/p</p>
+                      <div class="middle_layer "> {{!-- data_hide  --}}
+                            <p ><span id="temp">0</span><sup>o</sup>c</p>
+                            <p id="temp_status"><i class="fab fa-cloudversify"></i></p>
+                        </div>
+                    </div>
+                    <div class="wave"></div>
+                    <div class="wave1"></div>
+                    <div class="wave2"></div>
+                    <div class="wave3"></div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+    {{>footer}}
+    <script>
+        var currentdate = new Date(); 
+        var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getDay() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+        arr=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEPT","OCT","NOV","DEC"];
+        day=["MONDAY","TUESDAY","WEDNESDAY","THUSDAY","FRIDAY","SATURDAY","SUNDAY"]
+        const today_Date=document.getElementById('taday_date');
+        today_Date.innerText=`${currentdate.getDate()+" "+ arr[currentdate.getMonth()]}`;
+        const days=document.getElementById('day');
+        days.innerText=`${day[currentdate.getDay()-1]}`
+              
+    </script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
