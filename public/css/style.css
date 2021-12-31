@@ -120,7 +120,9 @@ html{
     min-height: 20rem;
     background-color: #323544;
     position:relative;
+    /* Hide over flow */
     overflow: hidden;
+    
     border-radius: 1rem;
     
     /* padding: 1rem; */
@@ -277,6 +279,12 @@ footer p{
     color: #fff;
     line-height: 5rem;
     font-size: 1.4rem;
+}
+
+
+/* About reference */
+.about-main{
+
 }
 
 /* responsive webiste */
